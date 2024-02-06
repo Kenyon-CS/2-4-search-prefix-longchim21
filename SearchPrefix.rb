@@ -1,7 +1,12 @@
-def searchPrefix(arr,s)
-
+def search_items_start_with(array, start_with)
+  array.select { |item| item.start_with?(start_with) }
 end
 
-print(searchPrefix(["abcde", "abdf", "adeab", "abdgse", "bdefa", "bacdef"],"ab"))
+puts "Enter items separated by commas:"
+input_array = gets.chomp.split(',')
 
-print(searchPrefix(["abcde", "abdf", "adeab", "abdgse", "bdefa", "bacdef"],"b"))
+puts "Enter the string to search for:"
+start_string = gets.chomp
+
+result = search_items_start_with(input_array, start_string)
+puts "Items starting with '#{start_string}': #{result.inspect}"
